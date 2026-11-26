@@ -38,9 +38,7 @@ echo "YOUR_ED25519_PUBLIC_KEY" | sudo tee /home/ai-ops/.ssh/authorized_keys
 sudo chmod 700 /home/ai-ops/.ssh && sudo chmod 600 /home/ai-ops/.ssh/authorized_keys
 sudo chown -R ai-ops:ai-ops /home/ai-ops/.ssh
 
-Используйте код с осторожностью.
 
-Скопировать код в буфер обмена.
 
 **On MikroTik RouterOS:** 
 
