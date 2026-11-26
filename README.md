@@ -15,6 +15,14 @@ Instead of pasting sensitive firewall rules, logs, and IP addresses into third-p
 
 #### Architecture
 
+```mermaid
+flowchart TD
+    AI["Self-Hosted AI Node (GPU)\nOllama + Open WebUI\nCustom Python Tool (Paramiko)"]
+
+    AI -->|"SSH (Ed25519 Key, ai-ops)"| MT["MikroTik CCR\nRouterOS 7\nFirewall / Logs"]
+    AI -->|"SSH (Ed25519 Key, ai-ops)"| VDS["Linux VDS\nwhois, dig, Lynis, web"]
+    AI -->|"SSH / IMAP (Read-Only)"| MAIL["Local Mail / Bare-Metal\nIMAP / Logs"]
+```
 
 #### Quick Start
 
@@ -30,6 +38,9 @@ echo "YOUR_ED25519_PUBLIC_KEY" | sudo tee /home/ai-ops/.ssh/authorized_keys
 sudo chmod 700 /home/ai-ops/.ssh && sudo chmod 600 /home/ai-ops/.ssh/authorized_keys
 sudo chown -R ai-ops:ai-ops /home/ai-ops/.ssh
 
+Используйте код с осторожностью.
+
+Скопировать код в буфер обмена.
 
 **On MikroTik RouterOS:** 
 
