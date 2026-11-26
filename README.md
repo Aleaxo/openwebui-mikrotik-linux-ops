@@ -52,6 +52,17 @@ sudo chown -R ai-ops:ai-ops /home/ai-ops/.ssh
 3. Configure your server IPs and IMAP settings via the tool's **Valves** UI.
 4. Create a custom model profile in **Workspace -> Models**, paste system_prompt.md into the System Prompt, enable the tool, and set **Function Calling** to Native.
 
+## Tested Environment & Hardware
+
+This setup is running 24/7 on bare-metal homelab hardware with zero external API dependencies:
+
+* **Compute Node:** Inspur NF5212M5 (Intel Xeon) + **NVIDIA Tesla V100**
+* **LLM Model:** `gemma4:12b` (selected for reliable `Native` tool-calling and CLI syntax accuracy)
+* **LLM Runtime:** Ollama + Open WebUI
+* **Network Gear:** MikroTik CCR1009 (RouterOS 7)
+* **Auxiliary Nodes:** Ubuntu Linux VDS nodes (`whois`, `dig`, `lynis`) + self-hosted **iRedMail** server (IMAP DMARC & Logwatch auditing)
+
+
 #### License
 
 MIT License — feel free to adapt, extend, and harden for your own homelab or infrastructure.
