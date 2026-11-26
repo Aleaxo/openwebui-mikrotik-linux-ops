@@ -60,7 +60,7 @@ This setup is running 24/7 on bare-metal homelab hardware with zero external API
 * **LLM Model:** `gemma4:12b` (selected for reliable `Native` tool-calling and CLI syntax accuracy)
 * **LLM Runtime:** Ollama + Open WebUI
 * **Network Gear:** MikroTik CCR1009 (RouterOS 7)
-* **Auxiliary Nodes:** Ubuntu Linux VDS nodes (`whois`, `dig`, `lynis`) + self-hosted **iRedMail** server (IMAP DMARC & Logwatch auditing)
+* **Auxiliary Nodes:** Ubuntu 26 Linux VDS nodes (`whois`, `dig`, `lynis`) + self-hosted **iRedMail** server (IMAP DMARC & Logwatch auditing)
 
 
 #### License
