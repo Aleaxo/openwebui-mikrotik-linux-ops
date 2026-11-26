@@ -15,35 +15,6 @@ Instead of pasting sensitive firewall rules, logs, and IP addresses into third-p
 
 #### Architecture
 
-Показать код
-
-Скрыть код
-
-Скачать диаграмму в формате SVG
-
-ASCII
-
-+-----------------------------------+
-
-|   Self-Hosted AI Node (GPU)       |
-|   Ollama + Open WebUI             |
-|   Custom Python Tool (Paramiko)   |
-+-----------------+-----------------+
-                  | SSH (Ed25519 Key, restricted 'ai-ops' user)
-        +---------+---------+-------------------+
-
-        |                   |                   |
-        v                   v                   v
-+---------------+   +---------------+   +---------------+
-
-| MikroTik CCR  |   | Linux VDS     |   | Local Mail /  |
-| (RouterOS 7)  |   | (whois, dig,  |   | Bare-Metal    |
-| Firewall/Logs |   |  Lynis, web)  |   | (IMAP / Logs) |
-+---------------+   +---------------+   +---------------+
-
-Используйте код с осторожностью.
-
-Скопировать код в буфер обмена.
 
 #### Quick Start
 
@@ -59,9 +30,6 @@ echo "YOUR_ED25519_PUBLIC_KEY" | sudo tee /home/ai-ops/.ssh/authorized_keys
 sudo chmod 700 /home/ai-ops/.ssh && sudo chmod 600 /home/ai-ops/.ssh/authorized_keys
 sudo chown -R ai-ops:ai-ops /home/ai-ops/.ssh
 
-Используйте код с осторожностью.
-
-Скопировать код в буфер обмена.
 
 **On MikroTik RouterOS:** 
 
